@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<section>
+    <table th:bgcolor="lightgray" th:border="1" th:bordercolor="darkgray" th:cellpadding="8" >
+        <caption><h2>Список автомобилей</h2></caption>
+        <thead>
+        <tr>
+            <th>Марка</th>
+            <th>Модель</th>
+            <th>Год выпуска</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car : ${allcars}">
+            <td th:text="${car.getModel()}">марка</td>
+            <td th:text="${car.getBrand()}">модель</td>
+            <td th:text="${car.getYearOfProduction()}">год</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
